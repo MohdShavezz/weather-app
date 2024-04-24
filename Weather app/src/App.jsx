@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 const api = {
-  key: "api-key",   // go to https://home.openweathermap.org/api_keys sign in and get api key
+  key: "53a040881247afa7953add6688de8dee", 
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
@@ -14,7 +14,7 @@ function App() {
     Search button is pressed. Make a fetch call to the Open Weather Map API.
   */
   const searchPressed = () => {
-    fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
+    fetch(`${api.base}weather?q=${search}&APPID=${api.key}`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result)
@@ -23,8 +23,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+      <header style={{textAlign:'center'}}>
         {/* HEADER  */}
         <h1>Weather App</h1>
 
@@ -55,7 +54,7 @@ function App() {
           ""
         )}
       </header>
-    </div>
+
   );
 }
 
